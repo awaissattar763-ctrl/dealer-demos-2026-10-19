@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klaus Schorer – Sanitär &amp; Heizungstechnik in Augsburg</title>
+<meta name="description" content="Sanitärinstallation, Heizungsmodernisierung, Wartung & Reparatur und Badsanierung in Augsburg. Notdienst-Hotline: +49 163 3262470.">
+<style>
+:root{
+  --blue:#0f4c81; --blue-dark:#0a3a63; --orange:#f26b1d; --orange-dark:#d4550f;
+  --light:#f5f8fc; --ink:#1d2b3a; --muted:#5b6b7d;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Demo banner */
+.demo-banner{background:#111;color:#fff;text-align:center;font-size:.8rem;padding:8px 12px;letter-spacing:.04em}
+.demo-banner strong{color:#ffd166}
+
+/* Sticky header */
+header.topbar{position:sticky;top:0;z-index:50;background:var(--blue);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo{width:44px;height:44px;border-radius:10px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:#fff}
+.brand .name{font-weight:800;font-size:1.1rem;line-height:1.2}
+.brand .sub{font-size:.75rem;color:#cfe3f5}
+.notdienst-pill{display:flex;align-items:center;gap:10px;background:var(--orange);color:#fff;border-radius:999px;padding:8px 18px;font-weight:700;font-size:.95rem;transition:background .2s}
+.notdienst-pill:hover{background:var(--orange-dark)}
+.notdienst-pill .dot{width:10px;height:10px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+nav.nav{background:var(--blue-dark)}
+nav.nav .container{display:flex;gap:4px;overflow-x:auto;padding:0 20px}
+nav.nav a{color:#dbe9f6;padding:11px 14px;font-size:.9rem;white-space:nowrap}
+nav.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--blue) 0%,#14619f 55%,#1b7bc0 100%);color:#fff;padding:76px 0 70px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;background:rgba(242,107,29,.25)}
+.hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:14px;position:relative;z-index:1}
+.hero h1 .accent{color:#ffd166}
+.hero p.lead{font-size:1.15rem;color:#e2eefb;max-width:640px;margin-bottom:28px;position:relative;z-index:1}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+.btn{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:700;font-size:1rem;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:var(--orange-dark)}
+.btn-outline{border:2px solid #fff;color:#fff}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+.hero-badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;position:relative;z-index:1}
+.hero-badges span{font-size:.92rem;color:#dcecf9;display:flex;align-items:center;gap:8px}
+
+/* Sections */
+section{padding:64px 0}
+.section-title{text-align:center;margin-bottom:12px}
+.section-title h2{font-size:2rem;color:var(--blue)}
+.section-title p{color:var(--muted);max-width:620px;margin:0 auto}
+
+/* Leistungen */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:36px}
+.card{background:#fff;border:1px solid #e2eaf3;border-radius:14px;padding:30px 24px;box-shadow:0 4px 16px rgba(15,76,129,.06);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(15,76,129,.12)}
+.card .icon{width:58px;height:58px;border-radius:14px;background:linear-gradient(135deg,var(--blue),#1b7bc0);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:18px}
+.card h3{font-size:1.15rem;color:var(--blue);margin-bottom:10px}
+.card p{font-size:.94rem;color:var(--muted)}
+
+/* Notdienst band */
+.notdienst-band{background:linear-gradient(135deg,var(--orange) 0%,var(--orange-dark) 100%);color:#fff;text-align:center}
+.notdienst-band h2{font-size:2rem;margin-bottom:10px}
+.notdienst-band p{max-width:620px;margin:0 auto 24px;color:#fff3e8}
+.notdienst-band .big-number{display:inline-block;background:#fff;color:var(--orange-dark);font-size:1.6rem;font-weight:800;border-radius:12px;padding:14px 34px;margin-bottom:8px}
+.notdienst-band .hours{font-size:.9rem;color:#ffe3cf}
+
+/* Form */
+.anfrage{background:var(--light)}
+.form-wrap{max-width:640px;margin:36px auto 0;background:#fff;border-radius:16px;padding:36px;box-shadow:0 8px 30px rgba(15,76,129,.1)}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-weight:600;margin-bottom:6px;font-size:.92rem;color:var(--blue)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:2px solid #dbe4ee;border-radius:10px;font-size:1rem;font-family:inherit;transition:border .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blue)}
+.form-group textarea{resize:vertical;min-height:100px}
+.btn-submit{width:100%;background:var(--blue);color:#fff;border:none;cursor:pointer;padding:15px;font-size:1.05rem}
+.btn-submit:hover{background:var(--blue-dark)}
+.form-note{font-size:.82rem;color:var(--muted);text-align:center;margin-top:14px}
+.form-success{display:none;background:#e6f7ec;border:2px solid #34a853;border-radius:12px;padding:24px;text-align:center}
+.form-success h3{color:#1e7a38;margin-bottom:8px}
+.form-success p{color:var(--muted)}
+
+/* Öffnungszeiten */
+.hours-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:36px}
+.hours-card{background:#fff;border:1px solid #e2eaf3;border-radius:14px;padding:30px;box-shadow:0 4px 16px rgba(15,76,129,.06)}
+.hours-card h3{color:var(--blue);margin-bottom:16px;font-size:1.2rem}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table td{padding:9px 0;border-bottom:1px solid #eef2f7;font-size:.95rem}
+.hours-table tr:last-child td{border-bottom:none}
+.hours-table td:last-child{text-align:right;font-weight:600}
+.contact-card{background:var(--blue);color:#fff}
+.contact-card h3{color:#fff}
+.contact-card .line{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:.95rem}
+.contact-card .line span.icon{font-size:1.2rem}
+.contact-card a{text-decoration:underline;color:#ffd166}
+
+/* Footer */
+footer{background:#0a2c4a;color:#b9cde1;padding:40px 0 24px;font-size:.9rem}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-bottom:28px}
+footer h4{color:#fff;margin-bottom:12px;font-size:1rem}
+footer a:hover{color:#fff}
+footer .bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:18px;text-align:center;font-size:.8rem;color:#8aa3bd}
+
+/* Floating WhatsApp */
+.fab{position:fixed;bottom:22px;right:22px;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:60;transition:transform .2s}
+.fab:hover{transform:scale(1.08)}
+
+@media(max-width:640px){
+  .hero h1{font-size:1.9rem}
+  .topbar .container{flex-wrap:wrap}
+  .notdienst-pill{font-size:.8rem;padding:7px 14px}
+  section{padding:48px 0}
+  .form-wrap{padding:24px}
+  .notdienst-band .big-number{font-size:1.25rem;padding:12px 22px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-banner">Dies ist eine <strong>Demo-Vorschau</strong> – ein unverbindlicher Gestaltungsentwurf, keine live Website.</div>
+
+<header class="topbar">
+  <div class="container">
+    <div class="brand">
+      <div class="logo">KS</div>
+      <div>
+        <div class="name">Klaus Schorer</div>
+        <div class="sub">Sanitär &amp; Heizungstechnik · Augsburg</div>
+      </div>
+    </div>
+    <a class="notdienst-pill" href="https://wa.me/491633262470">
+      <span class="dot"></span>
+      <span>Notdienst-Hotline: +49 163 3262470</span>
+    </a>
+  </div>
+</header>
+<nav class="nav">
+  <div class="container">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#notdienst">Notdienst</a>
+    <a href="#anfrage">Online-Anfrage</a>
+    <a href="#zeiten">Öffnungszeiten</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Sanitär &amp; Heizung<br>in <span class="accent">Augsburg</span></h1>
+    <p class="lead">Ihr Meisterbetrieb für Sanitärinstallation, Heizungsmodernisierung und Badsanierung – zuverlässig, sauber und zum Festpreis. Bei Rohrbruch oder Heizungsausfall: unser Notdienst ist für Sie da.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-orange" href="https://wa.me/491633262470">Jetzt per WhatsApp anfragen</a>
+      <a class="btn btn-outline" href="#anfrage">Online-Anfrage stellen</a>
+    </div>
+    <div class="hero-badges">
+      <span>✔ Meisterbetrieb</span>
+      <span>✔ Festpreis-Zusage</span>
+      <span>✔ Notdienst-Hotline</span>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen">
+  <div class="container">
+    <div class="section-title">
+      <h2>Unsere Leistungen</h2>
+      <p>Komplettservice rund um Wasser, Wärme und Bad – aus einer Hand, mit persönlicher Beratung.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🔧</div>
+        <h3>Sanitärinstallation</h3>
+        <p>Installation und Erneuerung von Wasserleitungen, Armaturen, Sanitäranlagen und Abwassersystemen – fachgerecht nach Norm.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3>Heizungsmodernisierung</h3>
+        <p>Austausch alter Heizungsanlagen gegen moderne, energieeffiziente Systeme – wir beraten Sie zur optimalen Lösung und Fördermöglichkeiten.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Wartung &amp; Reparatur</h3>
+        <p>Regelmäßige Wartung Ihrer Heizungsanlage sowie schnelle Reparatur bei Störungen – für Betriebssicherheit das ganze Jahr über.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛁</div>
+        <h3>Badsanierung</h3>
+        <p>Komplette Badsanierung aus einer Hand – von der Planung bis zur barrierefreien Neugestaltung Ihres Traumbads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="notdienst" class="notdienst-band">
+  <div class="container">
+    <h2>🚨 Notdienst-Hotline</h2>
+    <p>Rohrbruch, Wasserschaden oder Heizungsausfall? Rufen Sie uns sofort an – wir sind im Notfall schnell bei Ihnen in Augsburg und Umgebung.</p>
+    <a class="big-number" href="tel:+491633262470">+49 163 3262470</a>
+    <div class="hours"><a href="https://wa.me/491633262470" style="color:#fff;text-decoration:underline">Oder per WhatsApp schreiben →</a></div>
+  </div>
+</section>
+
+<section id="anfrage" class="anfrage">
+  <div class="container">
+    <div class="section-title">
+      <h2>Online-Anfrage</h2>
+      <p>Schildern Sie uns kurz Ihr Anliegen – wir melden uns schnellstmöglich bei Ihnen.</p>
+    </div>
+    <div class="form-wrap">
+      <form id="anfrageForm">
+        <div class="form-group">
+          <label for="anliegen">Ihr Anliegen *</label>
+          <select id="anliegen" required>
+            <option value="">Bitte wählen …</option>
+            <option>Sanitärinstallation</option>
+            <option>Heizungsmodernisierung</option>
+            <option>Wartung &amp; Reparatur</option>
+            <option>Badsanierung</option>
+            <option>Notfall / Rohrbruch</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Ihr Name *</label>
+          <input type="text" id="name" placeholder="Vor- und Nachname" required>
+        </div>
+        <div class="form-group">
+          <label for="telefon">Telefonnummer *</label>
+          <input type="tel" id="telefon" placeholder="z. B. 0171 2345678" required>
+        </div>
+        <div class="form-group">
+          <label for="nachricht">Nachricht (optional)</label>
+          <textarea id="nachricht" placeholder="Beschreiben Sie kurz Ihr Anliegen …"></textarea>
+        </div>
+        <button type="submit" class="btn btn-submit">Anfrage absenden</button>
+        <p class="form-note">Eilige Notfälle? Bitte direkt die Notdienst-Hotline anrufen: <a href="tel:+491633262470" style="color:var(--blue);font-weight:700">+49 163 3262470</a></p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <h3>✔ Vielen Dank für Ihre Anfrage!</h3>
+        <p>Wir haben Ihre Nachricht erhalten und melden uns schnellstmöglich bei Ihnen.<br>Bei dringenden Notfällen erreichen Sie uns direkt unter <strong>+49 163 3262470</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zeiten">
+  <div class="container">
+    <div class="section-title">
+      <h2>Öffnungszeiten &amp; Kontakt</h2>
+      <p>So erreichen Sie uns.</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-card">
+        <h3>🕐 Öffnungszeiten</h3>
+        <table class="hours-table">
+          <tr><td>Montag – Freitag</td><td>8:00 – 16:30 Uhr</td></tr>
+          <tr><td>Samstag</td><td>Geschlossen</td></tr>
+          <tr><td>Sonntag</td><td>Geschlossen</td></tr>
+        </table>
+        <p style="margin-top:14px;font-size:.88rem;color:var(--muted)">Außerhalb der Öffnungszeiten erreichen Sie uns in Notfällen über die Notdienst-Hotline.</p>
+      </div>
+      <div class="hours-card contact-card" id="kontakt">
+        <h3>📍 Kontakt</h3>
+        <div class="line"><span class="icon">🏢</span><span>Klaus Schorer<br>Sanitär &amp; Heizungstechnik<br>Schmiedgasse 12<br>86152 Augsburg</span></div>
+        <div class="line"><span class="icon">📞</span><span><a href="tel:+491633262470">+49 163 3262470</a></span></div>
+        <div class="line"><span class="icon">💬</span><span><a href="https://wa.me/491633262470">WhatsApp: Nachricht schreiben</a></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <h4>Klaus Schorer</h4>
+        <p>Sanitär &amp; Heizungstechnik<br>Schmiedgasse 12<br>86152 Augsburg</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Telefon: <a href="tel:+491633262470">+49 163 3262470</a><br>
+        WhatsApp: <a href="https://wa.me/491633262470">Nachricht schreiben</a></p>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <p>Mo–Fr: 8:00–16:30 Uhr<br>Notdienst-Hotline bei Notfällen</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <p>Sanitärinstallation · Heizungsmodernisierung · Wartung &amp; Reparatur · Badsanierung</p>
+      </div>
+    </div>
+    <div class="bottom">© 2026 Klaus Schorer – Sanitär &amp; Heizungstechnik · Demo-Vorschau (kein Impressum erforderlich, da Entwurf)</div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/491633262470" aria-label="Per WhatsApp kontaktieren">💬</a>
+
+<script>
+document.getElementById('anfrageForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+});
+</script>
+</body>
+</html>
