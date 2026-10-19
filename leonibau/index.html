@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeoniBau UG — Bau Augsburg</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#333;line-height:1.6}
+.demo-banner{background:#c0392b;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:700;letter-spacing:1px}
+header{background:#7a1f1f;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50}
+.logo{font-size:22px;font-weight:800}.logo span{color:#f0c060}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-size:15px}
+.cta{background:#25D366;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:700}
+.hero{background:linear-gradient(135deg,#7a1f1f,#a83232);color:#fff;padding:70px 24px;text-align:center}
+.hero h1{font-size:38px;margin-bottom:10px}
+.hero p{font-size:18px;opacity:.9}
+.hero .btns{margin-top:24px}
+.btn{display:inline-block;background:#f0c060;color:#7a1f1f;padding:13px 28px;border-radius:6px;text-decoration:none;font-weight:700;margin:6px}
+.btn.green{background:#25D366;color:#fff}
+section{padding:56px 24px;max-width:1100px;margin:0 auto}
+h2{font-size:28px;margin-bottom:24px;color:#7a1f1f;text-align:center}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:#fdf6ec;border-radius:10px;padding:26px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card .icon{font-size:38px;margin-bottom:10px}
+.card h3{margin-bottom:8px;color:#7a1f1f}
+.form-wrap{background:#7a1f1f;border-radius:12px;padding:36px;color:#fff;max-width:640px;margin:0 auto}
+.form-wrap h2{color:#fff}
+.form-wrap label{display:block;margin:12px 0 4px;font-size:14px}
+.form-wrap input,.form-wrap select,.form-wrap textarea{width:100%;padding:11px;border-radius:6px;border:none;font-size:15px}
+.form-wrap button{background:#f0c060;color:#7a1f1f;border:none;padding:13px 30px;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;width:100%}
+.confirm{display:none;background:#27ae60;color:#fff;padding:16px;border-radius:8px;margin-top:16px;text-align:center;font-weight:600}
+footer{background:#3d0f0f;color:#c9a0a0;padding:34px 24px;text-align:center;font-size:14px}
+footer a{color:#f0c060}
+.wa-float{position:fixed;bottom:22px;right:22px;background:#25D366;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:99}
+@media(max-width:700px){nav{display:none}.hero h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="demo-banner">DEMO-VORSCHAU · Konzept-Website — kein offizieller Auftritt</div>
+<header>
+<div class="logo">Leoni<span>Bau</span> UG</div>
+<nav><a href="#leistungen">Leistungen</a><a href="#anfrage">Anfrage</a><a href="#kontakt">Kontakt</a></nav>
+<a class="cta" href="https://wa.me/4917671964378">WhatsApp</a>
+</header>
+<div class="hero">
+<h1>Bauunternehmen in Augsburg</h1>
+<p>Rohbau · Umbau · Sanierung — solide gebaut</p>
+<div class="btns"><a class="btn" href="#anfrage">Angebot anfordern</a><a class="btn green" href="https://wa.me/4917671964378">WhatsApp</a></div>
+</div>
+<section id="leistungen">
+<h2>Unsere Leistungen</h2>
+<div class="services">
+<div class="card"><div class="icon">🧱</div><h3>Rohbau</h3><p>Mauerwerk &amp; Beton — fundiert</p></div>
+<div class="card"><div class="icon">🏠</div><h3>Umbau</h3><p>Erweiterungen &amp; Umnutzungen</p></div>
+<div class="card"><div class="icon">🔨</div><h3>Sanierung</h3><p>Bestand modernisieren &amp; erhalten</p></div>
+<div class="card"><div class="icon">📐</div><h3>Planung</h3><p>Beratung &amp; Baubegleitung</p></div>
+</div>
+</section>
+<section id="anfrage">
+<h2>Online-Anfrage</h2>
+<div class="form-wrap">
+<h2>Angebot anfordern</h2>
+<form onsubmit="document.getElementById('ok').style.display='block';return false;">
+<label>Name</label><input required placeholder="Ihr Name">
+<label>Telefon</label><input required placeholder="Ihre Telefonnummer">
+<label>Leistung</label><select><option>Rohbau</option><option>Umbau</option><option>Sanierung</option><option>Planung</option><option>Sonstiges</option></select>
+<label>Ihre Nachricht</label><textarea rows="3" placeholder="Beschreiben Sie Ihr Bauvorhaben"></textarea>
+<button type="submit">Anfrage absenden</button>
+<div class="confirm" id="ok">Vielen Dank! Wir erstellen Ihnen ein Angebot. (Demo)</div>
+</form>
+</div>
+</section>
+<footer id="kontakt">
+<strong>LeoniBau UG</strong><br>Tunnelstraße 6, 86199 Augsburg · Tel: <a href="tel:+4917671964378">0176 71964378</a><br>Mo–Fr 8:00–17:00 Uhr
+</footer>
+<a class="wa-float" href="https://wa.me/4917671964378">💬</a>
+</body>
+</html>

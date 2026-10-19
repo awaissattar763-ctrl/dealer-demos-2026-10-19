@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBK Handwerk — Osnabrück</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#1e2a32;line-height:1.6}
+.demo-banner{background:#c0392b;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:700;letter-spacing:1px}
+header{background:#153243;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50}
+.logo{font-size:22px;font-weight:800}.logo span{color:#f5a623}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-size:15px}
+.cta{background:#25D366;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:700}
+.hero{background:linear-gradient(135deg,#153243,#2c5f7c);color:#fff;padding:70px 24px;text-align:center}
+.hero h1{font-size:38px;margin-bottom:10px}.hero p{font-size:18px;opacity:.9}
+.hero .btns{margin-top:24px}
+.btn{display:inline-block;background:#f5a623;color:#153243;padding:13px 28px;border-radius:6px;text-decoration:none;font-weight:700;margin:6px}
+.btn.green{background:#25D366;color:#fff}
+section{padding:56px 24px;max-width:1100px;margin:0 auto}
+h2{font-size:28px;margin-bottom:24px;color:#153243;text-align:center}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:#f4f7f9;border-radius:10px;padding:26px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card .icon{font-size:38px;margin-bottom:10px}
+.card h3{margin-bottom:8px;color:#153243}
+.form-wrap{background:#153243;border-radius:12px;padding:36px;color:#fff;max-width:640px;margin:0 auto}
+.form-wrap h2{color:#fff}
+.form-wrap label{display:block;margin:12px 0 4px;font-size:14px}
+.form-wrap input,.form-wrap select,.form-wrap textarea{width:100%;padding:11px;border-radius:6px;border:none;font-size:15px}
+.form-wrap button{background:#f5a623;color:#153243;border:none;padding:13px 30px;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;width:100%}
+.confirm{display:none;background:#27ae60;color:#fff;padding:16px;border-radius:8px;margin-top:16px;text-align:center;font-weight:600}
+.about{background:#f4f7f9}
+.about p{max-width:700px;margin:0 auto;text-align:center;font-size:17px}
+footer{background:#0e2230;color:#cbd6dc;padding:34px 24px;text-align:center;font-size:14px}
+footer a{color:#f5a623}
+.wa-float{position:fixed;bottom:22px;right:22px;background:#25D366;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:99}
+@media(max-width:700px){nav{display:none}.hero h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="demo-banner">DEMO-VORSCHAU · Konzept-Website — kein offizieller Auftritt</div>
+<header>
+<div class="logo">CBK <span>Handwerk</span></div>
+<nav><a href="#leistungen">Leistungen</a><a href="#termin">Termin</a><a href="#kontakt">Kontakt</a></nav>
+<a class="cta" href="https://wa.me/491775265200">WhatsApp</a>
+</header>
+<div class="hero">
+<h1>Handwerker in Osnabrück</h1>
+<p>Renovierung · Reparatur · Ausbau — alles aus einer Hand</p>
+<div class="btns"><a class="btn" href="#termin">Termin buchen</a><a class="btn green" href="https://wa.me/491775265200">WhatsApp-Anfrage</a></div>
+</div>
+<section id="leistungen">
+<h2>Unsere Leistungen</h2>
+<div class="services">
+<div class="card"><div class="icon">🔨</div><h3>Renovierung</h3><p>Wohnungen &amp; Häuser — vom Boden bis zur Decke</p></div>
+<div class="card"><div class="icon">🔧</div><h3>Reparaturen</h3><p>Schnelle Hilfe bei Schäden aller Art</p></div>
+<div class="card"><div class="icon">🏠</div><h3>Ausbau</h3><p>Trockenbau, Malerarbeiten, Sanitär</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Elektro</h3><p>Installationen &amp; Modernisierung</p></div>
+</div>
+</section>
+<section id="termin">
+<h2>Online-Terminbuchung</h2>
+<div class="form-wrap">
+<h2>Anfrage senden</h2>
+<form onsubmit="document.getElementById('ok').style.display='block';return false;">
+<label>Name</label><input required placeholder="Ihr Name">
+<label>Telefon</label><input required placeholder="Ihre Telefonnummer">
+<label>Leistung</label><select><option>Renovierung</option><option>Reparatur</option><option>Ausbau</option><option>Elektro</option><option>Sonstiges</option></select>
+<label>Ihre Nachricht</label><textarea rows="3" placeholder="Worum geht es?"></textarea>
+<button type="submit">Anfrage absenden</button>
+<div class="confirm" id="ok">Vielen Dank! Wir melden uns schnellstmöglich bei Ihnen. (Demo)</div>
+</form>
+</div>
+</section>
+<section class="about" id="kontakt">
+<h2>Über CBK Handwerk</h2>
+<p>Ihr zuverlässiger Handwerksbetrieb in Osnabrück. Nahner Weg 5 — persönlich, pünktlich und sauber. Rufen Sie an oder schreiben Sie uns einfach per WhatsApp.</p>
+</section>
+<footer>
+<strong>CBK Handwerk</strong><br>Nahner Weg 5, 49086 Osnabrück · Tel: <a href="tel:+491775265200">0177 5265200</a><br>Mo–Fr 8:00–17:00 Uhr
+</footer>
+<a class="wa-float" href="https://wa.me/491775265200">💬</a>
+</body>
+</html>
